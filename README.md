@@ -8,13 +8,16 @@ http://aima.cs.berkeley.edu/python/utils.html
 Here is an example of the moves that are made for the following initial board:
 (the agent "A" always starts in the lower left corner)
 
+```
 --------------------
      -  -  G  P 
      W  -  P  - 
      -  -  -  - 
      A  -  P  - 
 --------------------
+```
 
+```
 Move # 1 -- to (1, 1): Safe
 ------------------------------------------------------------------------
 111  111  111  111     ---  ---  ---  ---      0  0  0  0     -  -  G  P 
@@ -79,3 +82,4 @@ Game Won!
 000  000  000  100     -S-  ---  B--  ---      2  4  6  0     -  -  -  - 
 000  000  200  111     ---  B--  ---  ---      1  3  0  0     -  -  P  - 
 ------------------------------------------------------------------------
+```
