@@ -5,8 +5,7 @@ Propostional logic (knowledge base, resolution method and queries) are handled v
 https://github.com/aimacode/aima-python/blob/master/logic.py
 http://aima.cs.berkeley.edu/python/utils.html
 
-Here is an example of the moves that are made for the following initial board:
-(the agent "A" always starts in the lower left corner)
+The path of the agent moving through the game, searching for the gold, is shown in printout below. The initial board configuration is:
 
 ```
 --------------------
@@ -16,6 +15,47 @@ Here is an example of the moves that are made for the following initial board:
      A  -  P  - 
 --------------------
 ```
+where "A" is the agent, "W" is the Wumpus, "P" are pits, and "G" is the gold. The agent has to find the gold while avoiding the pits and the Wumpus. At the start of each move, sensors provide some data:<br />
+
+breeze:  indicates a pit is in a neighboring cell<br />
+stench:  indicates the Wumpus is in a neighboring cell<br />
+glitter: indicates the gold is in a neighboring cell<br />
+
+There are four blocks of information shown for each move:
+
+**Determinations**
+
+What I know so far (pits, wumpus, gold) based on the sensor data (breeze, stench, and glitter) coupled with propositional logic. Initially, I know nothing.
+
+0 = definitely nothing is in the cell<br />
+1 = maybe something is in the cell<br />
+2 = definitely something is in the cell<br />
+
+Examples:
+
+PWG = Pit / Wumpus / Gold -- obtained by  KB |- alpha queries
+
+010: cell might contain a wumpus (i.e. risky),
+     but doesn't contain a pit or gold.<br />
+200: cell contains a pit, but no wumpus or gold<br />
+000: cell is completely safe -- neither a pit, wumpus, nor gold.<br />
+111: anything could be in the cell (i.e. risky).<br />
+
+**Sensor Data**
+
+What I observed when visiting the cell.<br />
+
+B = breeze, S = stench, G = glitter<br />
+
+This data is used to make the determinations through logic.
+
+**Move Order**
+
+Shows the order of the agent's moves throughout the game. The agent can backtrack at any point and move to a new cell that is a neighbor of any previously visited cell.
+
+**Hidden View**
+
+This shows where the agent, gold, pits and wumpus are. Of course, I'm not using any of this information in the move strategy, it's just listed for demonstration purposes (and useful during debugging).
 
 ```
 Move # 1 -- to (1, 1): Safe
