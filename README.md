@@ -8,12 +8,12 @@ http://aima.cs.berkeley.edu/python/utils.html
 The path of the agent moving through the game, searching for the gold, is shown in printout below. The initial board configuration is:
 
 ```
---------------------
-     -  -  G  P 
-     W  -  P  - 
-     -  -  -  - 
-     A  -  P  - 
---------------------
+--------------
+  -  -  G  P 
+  W  -  P  - 
+  -  -  -  - 
+  A  -  P  - 
+--------------
 ```
 where "A" is the agent, "W" is the Wumpus, "P" are pits, and "G" is the gold. The agent has to find the gold while avoiding the pits and the Wumpus. At the start of each move, sensors provide some data:<br />
 
