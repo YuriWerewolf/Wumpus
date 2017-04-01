@@ -1,8 +1,8 @@
 # Wumpus
 Play the Wumpus game -- avoid pits and the Wumpus and find the gold
 
-Propostional logic (knowledge base, resolution method and queries) are handled via functions from AIMA found in:
-https://github.com/aimacode/aima-python/blob/master/logic.py
+Propostional logic (knowledge base, resolution method and queries) are handled via functions from AIMA found in:<br />
+https://github.com/aimacode/aima-python/blob/master/logic.py<br />
 http://aima.cs.berkeley.edu/python/utils.html
 
 The path of the agent moving through the game, searching for the gold, is shown in printout below. The initial board configuration is:
@@ -58,6 +58,14 @@ Shows the order of the agent's moves throughout the game. The agent can backtrac
 This shows where the agent, gold, pits and wumpus are. Of course, I'm not using any of this information in the move strategy, it's just listed for demonstration purposes (and useful during debugging).
 
 ```
+Start of Game
+------------------------------------------------------------------------
+  Determinations           Sensor Data         Move Order    Hidden View
+111  111  111  111     ---  ---  ---  ---      0  0  0  0     -  -  G  P 
+111  111  111  111     ---  ---  ---  ---      0  0  0  0     W  -  P  - 
+111  111  111  111     ---  ---  ---  ---      0  0  0  0     -  -  -  - 
+111  111  111  111     ---  ---  ---  ---      0  0  0  0     -  -  P  - 
+------------------------------------------------------------------------
 Move # 1 -- to (1, 1): Safe
 ------------------------------------------------------------------------
   Determinations           Sensor Data         Move Order    Hidden View
